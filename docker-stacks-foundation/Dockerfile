@@ -97,9 +97,11 @@ RUN mkdir "/home/${NB_USER}/work" && \
 # files across image layers when the permissions change
 COPY --chown="${NB_UID}:${NB_GID}" initial-condarc "${CONDA_DIR}/.condarc"
 WORKDIR /tmp
+
+USER root
 RUN set -x && \
-    sudo apt-get install --yes --no-install-recommends micromamba --prefix=./bin/micromamba \
-    PYTHON_SPECIFIER="python=3.11" \
+    sudo apt-get install --yes --no-install-recommends micromamba --prefix=./bin/micromamba && \
+    PYTHON_SPECIFIER="python=3.11" && \
     # Install the packages
     ./bin/micromamba install \
         --root-prefix="${CONDA_DIR}" \
