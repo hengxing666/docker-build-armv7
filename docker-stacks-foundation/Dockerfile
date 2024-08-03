@@ -98,11 +98,7 @@ RUN mkdir "/home/${NB_USER}/work" && \
 COPY --chown="${NB_UID}:${NB_GID}" initial-condarc "${CONDA_DIR}/.condarc"
 WORKDIR /tmp
 RUN set -x && \
-    arch=$(uname -m) && \
-    # https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html#linux-and-macos
-    apt-get install -y micromamba \
-    # wget --progress=dot:giga -O - \
-    #    "https://micro.mamba.pm/api/micromamba/linux-${arch}/latest" | tar -xvj bin/micromamba && \
+    apt-get install -y micromamba --prefix=./bin/micromamba \
     PYTHON_SPECIFIER="python=${PYTHON_VERSION}" && \
     if [[ "${PYTHON_VERSION}" == "default" ]]; then PYTHON_SPECIFIER="python"; fi && \
     # Install the packages
