@@ -100,14 +100,13 @@ WORKDIR /tmp
 
 USER root
 RUN set -x && \
-    sudo apt-get install --yes --no-install-recommends micromamba && \
-    PYTHON_SPECIFIER="python=3.11" && \
+    sudo apt-get install -y micromamba && \
     # Install the packages
-    ./bin/micromamba install \
+    micromamba install \
         --root-prefix="${CONDA_DIR}" \
         --prefix="${CONDA_DIR}" \
         --yes \
-        "${PYTHON_SPECIFIER}" \
+        "python=3.11" \
         'mamba' \
         'jupyter_core' && \
     rm -rf /tmp/bin/ && \
