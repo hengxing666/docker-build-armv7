@@ -100,14 +100,13 @@ WORKDIR /tmp
 
 USER root
 RUN set -x && \
-    sudo apt-get install -y micromamba && \
+    sudo apt-get install -y mamba && \
     # Install the packages
-    micromamba install \
+    mamba install \
         --root-prefix="${CONDA_DIR}" \
         --prefix="${CONDA_DIR}" \
         --yes \
         "python=3.11" \
-        'mamba' \
         'jupyter_core' && \
     rm -rf /tmp/bin/ && \
     # Pin major.minor version of python
