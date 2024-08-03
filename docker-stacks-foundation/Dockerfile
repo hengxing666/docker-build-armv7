@@ -100,7 +100,7 @@ WORKDIR /tmp
 
 USER root
 RUN set -x && \
-    sudo apt-get install -y python3.11 && \
+    sudo apt-get install -y python3.12.4 && \
     # Install the packages
     pip install jupyter_core && \
     rm -rf /tmp/bin/ && \
