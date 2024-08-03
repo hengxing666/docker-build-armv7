@@ -23,8 +23,8 @@ jobs:
       uses: docker/login-action@v2.2.0
       with:
         registry: registry.cn-hangzhou.aliyuncs.com
-        username: $ALIYUN_REGISTRY_USER
-        password: $ALIYUN_REGISTRY_PASSWORD
+        username: ${{ secrets.ALIYUN_REGISTRY_USER }}
+        password: ${{ secrets.ALIYUN_REGISTRY_PASSWORD }}
         logout: false
 
     - 
@@ -42,4 +42,4 @@ jobs:
         platforms: |
             linux/arm/v7
         push: true
-        tags: $ALIYUN_REGISTRY/$ALIYUN_NAME_SPACE/jupyter-notebooks:fundation_linux_arm_v7
+        tags: ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_NAME_SPACE }}/jupyter-notebooks:fundation_linux_arm_v7
