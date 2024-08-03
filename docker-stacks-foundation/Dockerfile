@@ -98,9 +98,8 @@ RUN mkdir "/home/${NB_USER}/work" && \
 COPY --chown="${NB_UID}:${NB_GID}" initial-condarc "${CONDA_DIR}/.condarc"
 WORKDIR /tmp
 RUN set -x && \
-    apt-get install -y micromamba --prefix=./bin/micromamba \
-    PYTHON_SPECIFIER="python=${PYTHON_VERSION}" && \
-    if [[ "${PYTHON_VERSION}" == "default" ]]; then PYTHON_SPECIFIER="python"; fi && \
+    sudo apt-get install --yes --no-install-recommends micromamba --prefix=./bin/micromamba \
+    PYTHON_SPECIFIER="python=3.11" \
     # Install the packages
     ./bin/micromamba install \
         --root-prefix="${CONDA_DIR}" \
