@@ -100,7 +100,7 @@ WORKDIR /tmp
 
 USER root
 RUN set -x && \
-    sudo apt-get install --yes --no-install-recommends micromamba --prefix=./bin/micromamba && \
+    sudo apt-get install --yes --no-install-recommends micromamba && \
     PYTHON_SPECIFIER="python=3.11" && \
     # Install the packages
     ./bin/micromamba install \
