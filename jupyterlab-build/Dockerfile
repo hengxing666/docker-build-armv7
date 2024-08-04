@@ -4,7 +4,7 @@ USER root
 VOLUME /tm
 
 WORKDIR /tmp
-RUN sudo apt-get -y install git
+RUN sudo apk add git
 RUN git clone https://github.com/hengxing666/jupyterlab.git /tmp
 RUN pip install setuptools wheel
 
