@@ -8,5 +8,6 @@ WORKDIR /tmp
 RUN sudo apt-get -y install git
 RUN git clone https://github.com/hengxing666/jupyterlab.git /tmp
 RUN pip install setuptools wheel
-RUN python setup.py sdist bdist_wheel
+
+RUN set -x python setup.py sdist bdist_wheel /tmp/dist
 COPY /tmp/dist /wheel
