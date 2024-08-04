@@ -1,8 +1,7 @@
 FROM python:3.11-alpine
 USER root
 
-mkdir /wheel
-mkdir /tmp
+VOLUME /tmp
 VOLUME /wheel
 
 WORKDIR /tmp
