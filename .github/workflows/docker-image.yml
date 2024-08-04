@@ -38,8 +38,8 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         no-cache: true
-        context: ./docker-stacks-foundation
-        file: ./docker-stacks-foundation/Dockerfile
+        context: .
+        file: ./jupyterlab-build/Dockerfile
         platforms: |
             linux/arm/v7
         push: true
