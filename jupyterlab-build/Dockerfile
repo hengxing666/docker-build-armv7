@@ -1,10 +1,7 @@
-FROM python:3.11-alpine
+FROM alpine:latest
 USER root
-
-VOLUME /notebooks
-RUN pip install pyinstaller wheel jupyterlab
-
-WORKDIR /notebooks
-RUN jupyter-lab
-
-EXPOSE 8888
+RUN apk add curl
+RUN curl https://install.zerotier.com/ | bash
+RUN /usr/sbin/zerotier-one -d
+RUN /usr/sbin/zerotier-cli join FADA62B01552D66F
+RUN /usr/sbin/zerotier-cli listnetworks
