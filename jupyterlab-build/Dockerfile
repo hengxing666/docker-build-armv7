@@ -2,9 +2,9 @@ FROM python:3.11-alpine
 USER root
 
 VOLUME /notebooks
-RUN pip install jupyterlab
+RUN pip install pyinstaller wheel jupyterlab
 
 WORKDIR /notebooks
-RUN jupyterlab
+RUN jupyter-lab
 
 EXPOSE 8888
