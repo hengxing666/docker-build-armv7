@@ -43,4 +43,4 @@ jobs:
         platforms: |
             linux/arm/v7
         push: true
-        tags: ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_NAME_SPACE }}/jupyter-notebooks:fundation_linux_arm_v7
+        tags: ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_NAME_SPACE }}/zerotier:linux_arm_v7
