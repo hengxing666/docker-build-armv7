@@ -1,5 +1,6 @@
 FROM alpine:latest
 USER root
+RUN apk add bash
 RUN apk add curl
 RUN curl https://install.zerotier.com/ | bash
 RUN /usr/sbin/zerotier-one -d
