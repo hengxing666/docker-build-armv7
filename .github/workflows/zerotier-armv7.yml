@@ -2,7 +2,8 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "main" ]
+    paths:
+    - 'zerotier/zerotier-linux-armv7'
   pull_request:
     branches: [ "main" ]
 env:
