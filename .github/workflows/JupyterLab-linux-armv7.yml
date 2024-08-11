@@ -1,4 +1,4 @@
-name: JupyterLab
+name: JupyterLab 
 
 on:
   push:
