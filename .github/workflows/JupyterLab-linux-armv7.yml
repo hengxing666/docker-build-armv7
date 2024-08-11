@@ -45,4 +45,4 @@ jobs:
         platforms: |
             linux/arm/v7
         push: true
-        tags: ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_NAME_SPACE }}/jupyterLab:linux_arm_v7
+        tags: ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_NAME_SPACE }}/jupyterlab:linux_arm_v7
