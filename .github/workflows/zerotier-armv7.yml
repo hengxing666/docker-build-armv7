@@ -39,7 +39,7 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         no-cache: true
-        context: .
+        context: ./zerotier
         file: ./zerotier/zerotier-linux-armv7
         platforms: |
             linux/arm/v7
