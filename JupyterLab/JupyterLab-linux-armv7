@@ -3,7 +3,7 @@ USER root
 ENV DEBIAN_FRONTEND noninteractive
 RUN mkdir /autostart
 VOLUME /notebooks
-RUN pip install "setuptools<58.0.0" && apt update && apt upgrade
+RUN pip install "setuptools<58.0.0" && apt update && apt upgrade && apt-get install -y build-essential
 RUN pip uninstall pyzmq && pip install pyzmq==19.0.2
 RUN pip install pyinstaller wheel jupyterlab
 WORKDIR /autostart
