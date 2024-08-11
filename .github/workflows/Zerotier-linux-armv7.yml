@@ -4,6 +4,7 @@ on:
   push:
     paths:
     - 'Zerotier/Zerotier-linux-armv7'
+    - '.github/workflows/Zerotier-linux-armv7.yml'
   pull_request:
     branches: [ "main" ]
 env:

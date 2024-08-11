@@ -4,6 +4,7 @@ on:
   push:
     paths:
     - 'JupyterLab/JupyterLab-linux-armv7'
+    - '.github/workflows/JupyterLab-linux-armv7.yml'
   pull_request:
     branches: [ "main" ]
 env:
