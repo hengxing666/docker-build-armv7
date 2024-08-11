@@ -1,4 +1,4 @@
-name: Zerotier 
+name: Zerotier
 
 on:
   push:
