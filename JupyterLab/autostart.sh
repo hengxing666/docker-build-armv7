@@ -1,3 +1,3 @@
 #!/bin/bash
 cd /notebooks
-jupyter-lab
+jupyter lab
