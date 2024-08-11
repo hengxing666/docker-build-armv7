@@ -1,7 +1,0 @@
-FROM debian:latest
-USER root
-ENV DEBIAN_FRONTEND noninteractive
-RUN apt update && apt upgrade && apt-get install -y curl
-RUN curl https://install.zerotier.com/ | bash
-COPY autostart.sh /
-CMD /autostart.sh
