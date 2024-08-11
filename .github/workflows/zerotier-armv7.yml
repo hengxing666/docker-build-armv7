@@ -40,7 +40,7 @@ jobs:
       with:
         no-cache: true
         context: .
-        file: ./jupyterlab-build/Dockerfile
+        file: ./zerotier/zerotier-linux-armv7
         platforms: |
             linux/arm/v7
         push: true
