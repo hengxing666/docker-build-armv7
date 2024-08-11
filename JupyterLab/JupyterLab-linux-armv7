@@ -3,8 +3,7 @@ USER root
 ENV DEBIAN_FRONTEND noninteractive
 RUN mkdir /autostart
 VOLUME /notebooks
-RUN pip install "setuptools<58.0.0" && apt update && apt upgrade && apt-get install -y build-essential
-RUN pip install pyinstaller wheel jupyterlab
+RUN apt update && apt upgrade && apt-get install -y conda && conda install -c conda-forge jupyterlab
 WORKDIR /autostart
 COPY autostart.sh .
 EXPOSE 8888
