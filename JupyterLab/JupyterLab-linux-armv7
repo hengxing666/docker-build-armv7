@@ -20,12 +20,6 @@ RUN apt-get update && apt-get -y upgrade && apt-get install -yq --no-install-rec
     netcat \
     pandoc \
     python-dev-is-python3 \
-    texlive-fonts-extra \
-    texlive-fonts-recommended \
-    texlive-generic-recommended \
-    texlive-latex-base \
-    texlive-latex-extra \
-    texlive-xetex \
     tzdata \
     unzip \
     nano \
