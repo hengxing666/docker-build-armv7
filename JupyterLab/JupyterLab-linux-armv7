@@ -9,7 +9,7 @@ apt upgrade  --yes --no-install-recommends&& \
 apt-get install --yes --no-install-recommends \
     build-essential \
     fonts-liberation \
-    run-one && \
+    run-one \
     libzmq \
    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
