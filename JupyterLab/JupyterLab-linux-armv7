@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     lmodern \
     netcat \
     pandoc \
-    python-dev \
+    python-dev-is-python3 \
     texlive-fonts-extra \
     texlive-fonts-recommended \
     texlive-generic-recommended \
