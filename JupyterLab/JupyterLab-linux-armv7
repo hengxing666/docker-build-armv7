@@ -4,13 +4,13 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN mkdir /autostart
 VOLUME /notebooks
 RUN pip install "setuptools<58.0.0" && \
-apt update && \
-apt upgrade  --yes --no-install-recommends&& \
+apt-get update && \
+apt-get upgrade  --yes --no-install-recommends&& \
 apt-get install --yes --no-install-recommends \
     build-essential \
     fonts-liberation \
     run-one \
-    libzmq \
+    libzmq5 \
    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN pip install pyinstaller wheel jupyter_core jupyterlab
