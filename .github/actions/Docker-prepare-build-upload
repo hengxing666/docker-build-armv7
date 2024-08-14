@@ -1,25 +1,24 @@
 name: Docker-prepare-build-upload
 
 on:
-  pushs:
-   workflow_call:
-     inputs:
-       parent-image:
-         description: Parent image name
-         required: true
-         type: string
-       dockerfile-path:
-         description: Dockerfile路径
-         required: true
-         type: string
-       build-context:
-         description: 构建上下文
-         required: true
-         type: string
-       push-action:
-         description: 是否推送
-         required: true
-         type: string
+  workflow_call:
+    inputs:
+      parent-image:
+        description: Parent image name
+        required: true
+        type: string
+      dockerfile-path:
+        description: Dockerfile路径
+        required: true
+        type: string
+      build-context:
+        description: 构建上下文
+        required: true
+        type: string
+      push-action:
+        description: 是否推送
+        required: true
+        type: string
 env:
   ALIYUN_REGISTRY: "${{ secrets.ALIYUN_REGISTRY }}"
   ALIYUN_NAME_SPACE: "${{ secrets.ALIYUN_NAME_SPACE }}"
