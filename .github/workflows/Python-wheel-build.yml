@@ -2,6 +2,23 @@ name: Python-wheel-build
 
 on:
   workflow_dispatch:
+    inputs:
+      parent-image:
+        description: Parent image name
+        required: false
+        type: string
+      dockerfile-path:
+        description: Dockerfile路径
+        required: true
+        type: string
+      build-context:
+        description: 构建上下文
+        required: true
+        type: string
+      push-action:
+        description: 是否推送
+        required: true
+        type: boolean
   push:
     paths:
     - 'Python-wheel-build/trigger/N.txt'
