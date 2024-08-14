@@ -3,10 +3,29 @@ name: Docker-prepare-build-upload
 on:
   workflow_call:
     inputs:
-      parent-image:
-        description: Parent image name
+      os:
+        description: 系统
+        required: true
+        type: choice
+        options: 
+        - linux
+        default: linux
+      arch:
+        description: 架构
+        required: true
+        type: choice
+        options: 
+        - arm
+        - x86
+        default: arm
+      variant:
+        description: 变体
         required: false
-        type: string
+        type: choice
+        options: 
+        - v7
+        - v8
+        default: v7
       dockerfile-path:
         description: Dockerfile路径
         required: true
