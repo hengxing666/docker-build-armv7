@@ -3,10 +3,19 @@ name: Python-wheel-build
 on:
   workflow_dispatch:
     inputs:
-      parent-image:
-        description: Parent image name
-        required: false
-        type: string
+      os:
+        description: 系统
+        required: true
+        type: choice
+        options: 
+        - linux
+      arch:
+        description: 架构
+        required: true
+        type: choice
+        options: 
+        - armv7
+        - arm64
       dockerfile-path:
         description: Dockerfile路径
         required: true
