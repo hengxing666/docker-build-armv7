@@ -1,11 +1,23 @@
-name: N
+name: Docker-prepare-build-upload
 
 on:
-  push:
+  pushs:
    workflow_call:
      inputs:
        parent-image:
          description: Parent image name
+         required: true
+         type: string
+       dockerfile-path:
+         description: Dockerfile路径
+         required: true
+         type: string
+       build-context:
+         description: 构建上下文
+         required: true
+         type: string
+       push-action:
+         description: 是否推送
          required: true
          type: string
 env:
@@ -22,7 +34,8 @@ jobs:
       name: Checkout
       uses: actions/checkout@v3
       
-    - name: Login to Docker Hub
+    - 
+      name: Login to Docker Hub
       uses: docker/login-action@v2.2.0
       with:
         registry: registry.cn-hangzhou.aliyuncs.com
@@ -41,9 +54,9 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         no-cache: true
-        context: .
-        file: ./Zerotier/Zerotier-linux-armv7
+        context: ${{ input.build-context }}
+        file: ${{ input.dockerfile-path }}
         platforms: |
             linux/arm/v7
-        push: true
+        push: ${{ input.push-action }}
         tags: ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_NAME_SPACE }}/zerotier:linux_arm_v7
