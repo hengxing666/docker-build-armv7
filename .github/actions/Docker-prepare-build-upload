@@ -5,7 +5,7 @@ on:
     inputs:
       parent-image:
         description: Parent image name
-        required: true
+        required: false
         type: string
       dockerfile-path:
         description: Dockerfile路径
