@@ -75,6 +75,6 @@ jobs:
         context: ${{ input.build-context }}
         file: ${{ input.dockerfile-path }}
         platforms: |
-            linux/arm/v7
+            ${{ input.os }}/${{ input.arch }}/${{ input.variant }}
         push: ${{ input.push-action }}
         tags: ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_NAME_SPACE }}/zerotier:linux_arm_v7
