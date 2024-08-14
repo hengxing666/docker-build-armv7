@@ -9,21 +9,33 @@ on:
         type: choice
         options: 
         - linux
+        default: linux
       arch:
         description: 架构
         required: true
         type: choice
         options: 
-        - armv7
-        - arm64
+        - arm
+        - x86
+        default: arm
+      variant:
+        description: 变体
+        required: false
+        type: choice
+        options: 
+        - v7
+        - v8
+        default: v7
       dockerfile-path:
         description: Dockerfile路径
         required: true
         type: string
+        default: /
       build-context:
         description: 构建上下文
         required: true
         type: string
+        default: .
       push-action:
         description: 是否推送
         required: true
