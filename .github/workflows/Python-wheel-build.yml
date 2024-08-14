@@ -1,11 +1,11 @@
-name: Docker
+name: Python-wheel-build
 
 on:
   workflow_dispatch:
   push:
     paths:
     - 'Python-wheel-build/trigger/N.txt'
-    - '.github/workflows/Python-wheel-build.yml'
+   #- '.github/workflows/Python-wheel-build.yml'
 
 env:
   ALIYUN_REGISTRY: "${{ secrets.ALIYUN_REGISTRY }}"
@@ -15,8 +15,11 @@ env:
 
 jobs:
   prepare-docker:
-    name: Prepare docker to run crossenv
-
+  runs-on: ubuntu-latest
+  steps:
+    -
+      name: Prepare docker to run crossenv
+      uses: 
     
   build:
     needs: [prepare-docker]
