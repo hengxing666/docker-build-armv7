@@ -15,17 +15,17 @@ env:
 
 jobs:
   prepare-docker:
-  runs-on: ubuntu-latest
-  steps:
-    -
-      name: Prepare docker to run crossenv
-      uses: 
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Prepare docker to run crossenv
+        uses: ./.github/actions/Docker-prepare-build-upload.yml
     
   build:
     needs: [prepare-docker]
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+    - name: Checkout
       uses: actions/checkout@v3
     - name: Before freeing up disk space
       run: |
