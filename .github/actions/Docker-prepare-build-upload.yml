@@ -30,14 +30,16 @@ on:
         description: Dockerfile路径
         required: true
         type: string
+        default: ./Python-wheel-build/Dockerfile
       build-context:
         description: 构建上下文
         required: true
         type: string
+        default: ./Python-wheel-build
       push-action:
         description: 是否推送
         required: true
-        type: string
+        type: boolean
 env:
   ALIYUN_REGISTRY: "${{ secrets.ALIYUN_REGISTRY }}"
   ALIYUN_NAME_SPACE: "${{ secrets.ALIYUN_NAME_SPACE }}"
@@ -77,4 +79,4 @@ jobs:
         platforms: |
             ${{ input.os }}/${{ input.arch }}/${{ input.variant }}
         push: ${{ input.push-action }}
-        tags: ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_NAME_SPACE }}/zerotier:linux_arm_v7
+        tags: ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_NAME_SPACE2 }}/test:linux_arm_v7

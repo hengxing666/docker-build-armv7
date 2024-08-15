@@ -30,12 +30,12 @@ on:
         description: Dockerfile路径
         required: true
         type: string
-        default: /
+        default: ./Python-wheel-build/Dockerfile
       build-context:
         description: 构建上下文
         required: true
         type: string
-        default: .
+        default: ./Python-wheel-build
       push-action:
         description: 是否推送
         required: true
@@ -100,3 +100,14 @@ jobs:
           dockerfile-path: ${{ input.dockerfile-path }}
           push-action: ${{ input.push-action }}
   
+  push:
+    needs: [prepare-docker]
+    runs-on: ubuntu-latest
+    steps:
+      - 
+        name: Push to another repository
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        run: |
+         git remote add target <target_repo_url>
+         git push target HEAD:refs/heads/main
