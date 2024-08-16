@@ -5,5 +5,5 @@ RUN apt update && apt upgrade && apt-get install -y curl
 RUN curl https://install.zerotier.com/ | bash
 WORKDIR /autostart
 COPY ./autostart.sh .
-RUN chmod a+x /autostartautostart.sh
+RUN chmod a+x /autostart/autostart.sh
 ENTRYPOINT ["sh","./autostart/autostart.sh"]
