@@ -74,9 +74,9 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         no-cache: true
-        context: ${{ inputs.build-context }}
-        file: ${{ inputs.dockerfile-path }}
+        context: ${{ github.event.inputs.build-context }}
+        file: ${{ github.event.inputs.dockerfile-path }}
         platforms: |
-            ${{ inputs.os }}/${{ inputs.arch }}/${{ inputs.variant }}
-        push: ${{ inputs.push-action }}
+            ${{ github.event.inputs.os }}/${{ github.event.inputs.arch }}/${{ github.event.inputs.variant }}
+        push: ${{ github.event.inputs.push-action }}
         tags: ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_NAME_SPACE2 }}/test:linux_arm_v7
