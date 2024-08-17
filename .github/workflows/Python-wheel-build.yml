@@ -99,12 +99,12 @@ jobs:
         name: Prepare docker to run crossenv
         uses: ./.github/actions/docker-prepare-build-upload
         with:
-          build-context: ${{ inputs.build-context }}
-          dockerfile-path: ${{ inputs.dockerfile-path }}
-          push-action: ${{ inputs.push-action }}
-          os: ${{ inputs.os }}
-          arch: ${{ inputs.arch }}
-          variant: ${{ inputs.variant }}
+          build-context: ${{ github.event.inputs.build-context }}
+          dockerfile-path: ${{ github.event.inputs.dockerfile-path }}
+          push-action: ${{ github.event.inputs.push-action }}
+          os: ${{ github.event.inputs.os }}
+          arch: ${{ github.event.inputs.arch }}
+          variant: ${{ github.event.inputs.variant }}
   
   push:
     needs: [prepare-docker]
