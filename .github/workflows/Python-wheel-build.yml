@@ -94,7 +94,7 @@ jobs:
     steps:
       -
         name: Prepare docker to run crossenv
-        uses: ./.github/actions/Docker-prepare-build-upload
+        uses: ./.github/actions/docker-prepare-build-upload
         with:
           build-context: ${{ inputs.build-context }}
           dockerfile-path: ${{ inputs.dockerfile-path }}
