@@ -1,5 +1,5 @@
 FROM python:3.11-slim-bullseye
-
+ENV DEBIAN_FRONTEND noninteractive
 RUN apt update && apt install -y vim git curl proxychains gcc \                           
 		build-essential crossbuild-essential-armhf \              
 		libsdl1.2-dev xterm mesa-common-dev zstd liblz4-tool libffi-dev \  
