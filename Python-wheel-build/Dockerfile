@@ -5,7 +5,7 @@ RUN apt update && apt install -y vim git curl proxychains gcc \
 		libsdl1.2-dev xterm mesa-common-dev zstd liblz4-tool libffi-dev \  
 		cmake libssl-dev bc device-tree-compiler flex bison libncurses-dev \
         lzma liblzma-dev libbz2-dev gfortran libopenblas-dev liblapack-dev && \
-	sudo apt build-dep numpy
+	apt build-dep numpy
 
 RUN mkdir -p /root/project
 RUN pip install wheel setuptools
