@@ -1,6 +1,9 @@
 FROM python:3.11-slim-bullseye
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt update && apt install -y vim git curl proxychains gcc \                           
+WORKDIR /
+COPY sources.list .
+RUN /bin/cp -f sources.list /etc/apt
+RUN apt update && apt -y upgrade && apt install -y vim git curl proxychains gcc \                           
 		build-essential crossbuild-essential-armhf \              
 		libsdl1.2-dev xterm mesa-common-dev zstd liblz4-tool libffi-dev \  
 		cmake libssl-dev bc device-tree-compiler flex bison libncurses-dev \
