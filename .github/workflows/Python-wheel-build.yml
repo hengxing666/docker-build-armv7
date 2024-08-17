@@ -96,9 +96,12 @@ jobs:
         name: Prepare docker to run crossenv
         uses: ./.github/actions/Docker-prepare-build-upload.yml
         with:
-          build-context: ${{ input.build-context }}
-          dockerfile-path: ${{ input.dockerfile-path }}
-          push-action: ${{ input.push-action }}
+          build-context: ${{ inputs.build-context }}
+          dockerfile-path: ${{ inputs.dockerfile-path }}
+          push-action: ${{ inputs.push-action }}
+          os: ${{ inputs.os }}
+          arch: ${{ inputs.arch }}
+          variant: ${{ inputs.variant }}
   
   push:
     needs: [prepare-docker]
@@ -106,8 +109,4 @@ jobs:
     steps:
       - 
         name: Push to another repository
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        run: |
-         git remote add target <target_repo_url>
-         git push target HEAD:refs/heads/main
+        run: echo "Before freeing up disk space"
