@@ -42,7 +42,7 @@ on:
         type: boolean
 env:
   ALIYUN_REGISTRY: "${{ secrets.ALIYUN_REGISTRY }}"
-  ALIYUN_NAME_SPACE: "${{ secrets.ALIYUN_NAME_SPACE }}"
+  ALIYUN_NAME_SPACE: "${{ secrets.ALIYUN_NAME_SPACE2 }}"
   ALIYUN_REGISTRY_USER: "${{ secrets.ALIYUN_REGISTRY_USER }}"
   ALIYUN_REGISTRY_PASSWORD: "${{ secrets.ALIYUN_REGISTRY_PASSWORD }}"
 
@@ -79,4 +79,4 @@ jobs:
         platforms: |
             ${{ github.event.inputs.os }}/${{ github.event.inputs.arch }}/${{ github.event.inputs.variant }}
         push: ${{ github.event.inputs.push-action }}
-        tags: ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_NAME_SPACE2 }}/test:linux_arm_v7
+        tags: ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_NAME_SPACE2 }}/oneapi:linux_arm_v7
